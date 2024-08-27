@@ -6,23 +6,45 @@
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
-  <body class="text-gray-600 bg-slate-200 font-body">
+
+  <body class="text-gray-800 bg-background-100 font-body">
     <!-- Content Wrapper -->
-    <div class="grid md:grid-cols-3">
+    <div class="grid md:grid-cols-4">
       <!-- Start Of Navigation -->
-      <div class="md:col-span-1">
-        <nav>
-          <div>
-            <h1 class="font-bold uppercase p-4 border-b border-gray-400">
+      <div class="md:col-span-1 md:flex md:justify-end">
+        <nav class="text-right">
+          <div class="flex justify-between items-center">
+            <h1 class="font-bold uppercase p-4 hover:text-primary">
               <a href="#">Food Store</a>
             </h1>
+            <div class="px-4 cursor-pointer md:hidden" id="burger">
+              <svg
+                class="w-6"
+                data-slot="icon"
+                fill="none"
+                stroke-width="1.5"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
+                ></path>
+              </svg>
+            </div>
           </div>
-          <ul>
-            <li class="text-green-600 font-bold">
-              <a href="#">
+          <ul class="text-xs mt-6 hidden md:block" id="menu">
+            <li class="text-primary font-bold py-1">
+              <a
+                href="#"
+                class="px-4 flex justify-end border-r-4 border-primary"
+              >
                 <span>Home</span>
                 <svg
-                  class="w-5"
+                  class="w-4 ml-2"
                   data-slot="icon"
                   fill="none"
                   stroke-width="1.5"
@@ -39,11 +61,14 @@
                 </svg>
               </a>
             </li>
-            <li>
-              <a href="#">
+            <li class="py-1">
+              <a
+                href="#"
+                class="px-4 flex justify-end border-r-4 border-background-100"
+              >
                 <span>About</span>
                 <svg
-                  class="w-5"
+                  class="w-4 ml-2"
                   data-slot="icon"
                   fill="none"
                   stroke-width="1.5"
@@ -60,11 +85,14 @@
                 </svg>
               </a>
             </li>
-            <li>
-              <a href="#">
+            <li class="py-1">
+              <a
+                href="#"
+                class="px-4 flex justify-end border-r-4 border-background-100"
+              >
                 <span>Contact</span>
                 <svg
-                  class="w-5"
+                  class="w-4 ml-2"
                   data-slot="icon"
                   fill="none"
                   stroke-width="1.5"
@@ -87,14 +115,16 @@
       <!-- End Of Navigation -->
 
       <!-- Start Of Main -->
-      <main class="px-16 py-6 md:col-span-2">
+      <main class="px-16 py-6 md:col-span-3 bg-background-200">
         <div class="flex justify-center md:justify-end">
-          <a href="#" class="button text-primary border-primary md:border-2"
+          <a
+            href="#"
+            class="button text-primary border-primary md:border-2 hover:bg-primary hover:text-white transition ease-out duration-200"
             >Login</a
           >
           <a
             href="#"
-            class="button text-primary ml-2 border-primary md:border-2"
+            class="button text-primary ml-2 border-primary md:border-2 hover:bg-primary hover:text-white transition ease-out duration-200"
             >Sign Up</a
           >
         </div>
@@ -103,11 +133,11 @@
           <h3 class="text-2xl font-semibold">Easy to Follow</h3>
         </header>
         <div>
-          <h4 class="font-bold pb-2 mt-12 border-b border-gray-400">
+          <h4 class="font-bold pb-2 mt-12 border-b border-gray-200">
             Latest Recipes
           </h4>
           <div class="mt-8 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-            <div class="card">
+            <div class="card hover:shadow-lg">
               <img
                 src="img/stew.jpg"
                 alt="stew"
@@ -119,7 +149,7 @@
               </div>
               <div class="badge">
                 <svg
-                  class="w-5 inline-block"
+                  class="w-4 inline-block"
                   data-slot="icon"
                   fill="none"
                   stroke-width="1.5"
@@ -137,7 +167,7 @@
                 <span>25 mins</span>
               </div>
             </div>
-            <div class="card">
+            <div class="card hover:shadow-lg">
               <img
                 src="img/noodles.jpg"
                 alt="stew"
@@ -149,7 +179,7 @@
               </div>
               <div class="badge">
                 <svg
-                  class="w-5 inline-block"
+                  class="w-4 inline-block"
                   data-slot="icon"
                   fill="none"
                   stroke-width="1.5"
@@ -167,7 +197,7 @@
                 <span>25 mins</span>
               </div>
             </div>
-            <div class="card">
+            <div class="card hover:shadow-lg">
               <img
                 src="img/curry.jpg"
                 alt="stew"
@@ -179,7 +209,7 @@
               </div>
               <div class="badge">
                 <svg
-                  class="w-5 inline-block"
+                  class="w-4 inline-block"
                   data-slot="icon"
                   fill="none"
                   stroke-width="1.5"
@@ -198,12 +228,14 @@
               </div>
             </div>
           </div>
-          <h4 class="font-bold pb-2 mt-12 border-b border-gray-400">
+          <h4 class="font-bold pb-2 mt-12 border-b border-gray-200">
             Most Popular
           </h4>
           <div class="mt-8"></div>
           <div class="flex justify-center">
-            <div class="button bg-secondary-100 text-secondary-200">
+            <div
+              class="button bg-primary border-primary border-2 text-white hover:bg-transparent hover:text-primary transition ease-out duration-200"
+            >
               Load More
             </div>
           </div>
@@ -212,5 +244,6 @@
       <!-- End Of Main -->
     </div>
     <!-- Content Wrapper -->
+    <script src="script.js"></script>
   </body>
 </html>
