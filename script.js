@@ -8,7 +8,3 @@ burger.addEventListener("click", () => {
     menu.classList.add("hidden");
   }
 });
-
-document.addEventListener("load", () => {
-  console.log("");
-});
